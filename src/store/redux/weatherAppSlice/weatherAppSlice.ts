@@ -2,7 +2,6 @@ import { createAppSlice } from "store/createAppSlice"
 import { WeatherAppSliceState } from "./types"
 import axios from "axios"
 import { v4 } from "uuid"
-import { current } from "@reduxjs/toolkit"
 
 const KEY = "56dc85cde04929bf987f47482952287a"
 
@@ -23,9 +22,6 @@ export const weatherAppSlice = createAppSlice({
           const response = await axios.get(
             `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${KEY}`,
           )
-          // if (!response || !response.data) {
-          //   throw new Error("Invalid response from the API")
-          // }
           return response.data
         } catch (error) {
           return thunkApi.rejectWithValue(error)

@@ -5,8 +5,7 @@ import { WeatherCardProps } from "./types";
 
 
 function WeatherCard({ city, temp, iconUrl, onDelete, isHistory = false }: WeatherCardProps) {
-    // const { currentData, status, error } = useAppSelector(weatherAppSelectors.weatherData);
-    // const { city, temp, iconUrl } = currentData;
+
     return (
         <WeatherCardWrapper>
             <OutputBlock>
