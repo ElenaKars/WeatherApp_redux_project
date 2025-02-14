@@ -12,10 +12,7 @@ export const ErrorCardWrapper = styled.div`
   align-items: flex-start;
   border-radius: 15px;
 `
-// export const ErrorTitle = styled.p`
-//   color: #f35e5e;
-//   font-size: 57px;
-// `
+
 export const ErrorText = styled.p`
   color: #f35e5e;
   font-size: 57px;

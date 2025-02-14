@@ -7,7 +7,7 @@ export const HistoryWrapper = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: start;
-  /* overflow: hidden; */
+  overflow: hidden;
   flex: 1;
   align-items: start;
 `
@@ -19,7 +19,7 @@ export const HistoryBlock = styled.div`
   flex: 1;
   overflow-y: auto;
   padding: 20px 0;
-  max-height: 700px;
+  max-height: 600px;
   gap: 15px;
   overflow-y: auto;
 
@@ -49,6 +49,8 @@ export const ButtonWrapper = styled.div`
 `
 export const DeleteBtnWrapper = styled.div`
   width: 50%;
+  position: sticky;
+  bottom: 0;
 `
 
 export const DeleteButton = styled.button`
