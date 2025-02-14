@@ -51,8 +51,8 @@ function Home() {
         </SearchWrapper>
       </FormSearch>
       {status === 'loading' && <Spinner />}
-      {shouldShowErrorCard && <ErrorCard errorMessage={error} />}
       <ResultBlock>
+        {shouldShowErrorCard && <ErrorCard error={error || "Something went wrong with API data"} />}
         {shouldShowWeatherCard && <WeatherCard city={currentCity} temp={currentTemp}
           iconUrl={currentIconUrl} isHistory={false} />}
       </ResultBlock>

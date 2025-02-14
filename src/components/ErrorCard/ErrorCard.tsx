@@ -1,15 +1,13 @@
-import { ErrorCardWrapper, ErrorText, ErrorTitle } from "./styles";
+import { ErrorCardWrapper, ErrorText } from "./styles";
 
 interface ErrorCardProps {
-    errorMessage: string;
+    error: any | { message: string; };
 }
 
-function ErrorCard({ errorMessage }: ErrorCardProps) {
+function ErrorCard({ error }: ErrorCardProps) {
     return (
         <ErrorCardWrapper>
-            <ErrorTitle>Error
-            </ErrorTitle>
-            <ErrorText>{errorMessage}</ErrorText>
+            <ErrorText>{error.message || "Unknown error occurred"}</ErrorText>
         </ErrorCardWrapper>
     );
 }

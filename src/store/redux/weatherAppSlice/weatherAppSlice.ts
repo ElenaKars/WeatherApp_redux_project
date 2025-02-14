@@ -23,12 +23,12 @@ export const weatherAppSlice = createAppSlice({
           const response = await axios.get(
             `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${KEY}`,
           )
-          if (!response || !response.data) {
-            throw new Error("Invalid response from the API")
-          }
+          // if (!response || !response.data) {
+          //   throw new Error("Invalid response from the API")
+          // }
           return response.data
         } catch (error) {
-          thunkApi.rejectWithValue(error || "Unknown error")
+          return thunkApi.rejectWithValue(error)
         }
       },
       {

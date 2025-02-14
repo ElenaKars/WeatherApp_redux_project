@@ -9,7 +9,7 @@ function HistoryPage() {
   const { historyData } = useAppSelector(weatherAppSelectors.weatherData);
   const dispatch = useAppDispatch();
 
-  const deleteCard = (id: string) => {
+  const deleteCard = (id: string | any) => {
     dispatch(weatherAppActions.deleteCard(id));
   };
   const weahterCards = historyData.map((card) => {
