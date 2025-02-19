@@ -37,7 +37,7 @@ export const weatherAppSlice = createAppSlice({
           const tempCelsius = (action.payload.main.temp - 273.15).toFixed(1)
 
           const newWeatherData = {
-            id: `${v4()}`,
+            id: v4(),
             city: action.payload.name,
             temp: `${tempCelsius}°C`,
             iconUrl: `http://openweathermap.org/img/w/${action.payload.weather[0].icon}.png`,
