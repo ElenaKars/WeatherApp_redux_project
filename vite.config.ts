@@ -1,9 +1,9 @@
 import { defineConfig } from "vitest/config"
 import react from "@vitejs/plugin-react"
 import path from "path"
-import rollupNodePolyFill from "rollup-plugin-node-polyfills"
+import { NodeGlobalsPolyfillPlugin } from "@esbuild-plugins/node-globals-polyfill"
+import { NodeModulesPolyfillPlugin } from "@esbuild-plugins/node-modules-polyfill"
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
   resolve: {
@@ -13,9 +13,29 @@ export default defineConfig({
       pages: path.resolve(__dirname, "src/pages"),
       styles: path.resolve(__dirname, "src/styles"),
       store: path.resolve(__dirname, "src/store"),
-
-      crypto: "crypto-browserify",
-      stream: "stream-browserify",
+    },
+  },
+  define: {
+    global: "globalThis",
+    "process.env": {},
+  },
+  optimizeDeps: {
+    esbuildOptions: {
+      define: {
+        global: "globalThis",
+      },
+      plugins: [
+        NodeGlobalsPolyfillPlugin({
+          process: true,
+          buffer: true,
+        }),
+        NodeModulesPolyfillPlugin(),
+      ],
+    },
+  },
+  build: {
+    rollupOptions: {
+      plugins: [],
     },
   },
   server: {
@@ -26,13 +46,5 @@ export default defineConfig({
     environment: "jsdom",
     setupFiles: "src/setupTests",
     mockReset: true,
-  },
-  define: {
-    "process.env": {},
-  },
-  build: {
-    rollupOptions: {
-      plugins: [rollupNodePolyFill()],
-    },
   },
 })
