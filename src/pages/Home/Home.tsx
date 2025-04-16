@@ -1,6 +1,7 @@
 import { useFormik } from "formik";
 import { useAppDispatch, useAppSelector } from "store/hooks";
 import * as Yup from 'yup';
+import { useEffect } from "react";
 
 import { HomePageWrapper, FormSearch, SearchWrapper, ResultBlock, ButtonWrapper } from "./styles";
 import { SearchForm } from "./types";
@@ -17,6 +18,9 @@ function Home() {
   const { city: currentCity, temp: currentTemp, iconUrl: currentIconUrl } = currentData;
   const dispatch = useAppDispatch();
 
+  useEffect(() => {
+    dispatch(weatherAppActions.clearCurrentData());
+  }, [dispatch]);
 
   const schema = Yup.object().shape({
     city: Yup.string().required("Field cannot be empty. Enter city name.")
@@ -30,7 +34,6 @@ function Home() {
     validationSchema: schema,
     validateOnChange: false,
     onSubmit: (values) => {
-
       dispatch(weatherAppActions.clearCurrentData());
       dispatch(weatherAppActions.getWeather(values.city));
     }

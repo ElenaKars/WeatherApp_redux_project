@@ -8,16 +8,13 @@ export const HistoryWrapper = styled.div`
   justify-content: flex-start;
   align-items: start;
   overflow: hidden;
-  flex: 1;
-  align-items: start;
+  flex-grow: 1;
 `
 
 export const HistoryBlock = styled.div`
   display: flex;
-  flex-grow: 1;
   flex-direction: column;
-  flex: 1;
-  overflow-y: auto;
+  flex-grow: 1;
   margin: 20px 0;
   max-height: 600px;
   gap: 15px;
@@ -56,12 +53,12 @@ export const DeleteButton = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 20px;
-  height: 20px;
+  width: 1.5rem;
+  height: 1.5rem;
   border-radius: 50%;
   background-color: grey;
   color: white;
-  font-size: 10px;
+  font-size: 0.625rem;
   font-weight: bold;
   border: none;
   position: absolute;
