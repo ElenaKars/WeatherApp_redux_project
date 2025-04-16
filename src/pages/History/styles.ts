@@ -8,13 +8,16 @@ export const HistoryWrapper = styled.div`
   justify-content: flex-start;
   align-items: start;
   overflow: hidden;
-  flex-grow: 1;
+  flex: 1;
+  align-items: start;
 `
 
 export const HistoryBlock = styled.div`
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  flex: 1;
+  overflow-y: auto;
   margin: 20px 0;
   max-height: 600px;
   gap: 15px;
@@ -42,6 +45,7 @@ export const ButtonWrapper = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
+  margin-bottom: 20px;
 `
 export const DeleteBtnWrapper = styled.div`
   width: 50%;
