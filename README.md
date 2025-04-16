@@ -1,27 +1,68 @@
-# vite-template-redux
+# WeatherApp Redux Project
 
-Uses [Vite](https://vitejs.dev/), [Vitest](https://vitest.dev/), and [React Testing Library](https://github.com/testing-library/react-testing-library) to create a modern [React](https://react.dev/) app compatible with [Create React App](https://create-react-app.dev/)
+## Description
 
-```sh
-npx degit reduxjs/redux-templates/packages/vite-template-redux my-app
+WeatherApp is an application for displaying the current weather in a selected city. It uses Redux for state management and Vite as a build tool.
+
+## Features
+- Search for weather by city name
+- Display current temperature, weather icon, and city name
+- Search history with the ability to delete individual entries or the entire history
+
+## Installation
+
+1. Clone the repository:
+   ```bash
+   git clone <URL of your repository>
+   ```
+
+2. Navigate to the project directory:
+   ```bash
+   cd WeatherApp_redux_project
+   ```
+
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+## Running the Application
+
+### Development Mode
+
+To run the application in development mode, execute:
+```bash
+npm run dev
 ```
 
-## Goals
+### Build
 
-- Easy migration from Create React App or Vite
-- As beginner friendly as Create React App
-- Optimized performance compared to Create React App
-- Customizable without ejecting
+To build the application, execute:
+```bash
+npm run build
+```
 
-## Scripts
+### Running the Built Application
 
-- `dev`/`start` - start dev server and open browser
-- `build` - build for production
-- `preview` - locally preview production build
-- `test` - launch test runner
+To run the built application, execute:
+```bash
+npm run serve
+```
 
-## Inspiration
+## Testing
 
-- [Create React App](https://github.com/facebook/create-react-app/tree/main/packages/cra-template)
-- [Vite](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react)
-- [Vitest](https://github.com/vitest-dev/vitest/tree/main/examples/react-testing-lib)
+To run tests, execute:
+```bash
+npm test
+```
+
+## Technologies Used
+- React
+- Redux
+- Vite
+- TypeScript
+- Emotion (for styling)
+
+## License
+
+This project is licensed under the MIT License.
